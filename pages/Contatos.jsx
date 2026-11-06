@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles/site.css"
 import api from "../api/api";
 
 export default function Contatos() {
@@ -68,19 +69,20 @@ export default function Contatos() {
 
 
 
-            <ul>
+            <div>
 
                 {contatos.map((c) => (
 
-                    <li key={c._id}>
-
-                        {c.nome} - {c.email}
-
-                    </li>
+                    <div key={c._id} className="card">
+                        <spam className="lable">{c.nome}</spam>
+                        <spam className="lable">{c.email}</spam>
+                        <spam className="lable">{c.telefone}</spam>
+                        <spam className="lable">{c.endereco}</spam>
+                    </div>
 
                 ))}
 
-            </ul>
+            </div>
 
         </div>
 
